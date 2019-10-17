@@ -20,7 +20,7 @@ class Weapon {
         if (this.durability >= 0.3 * this.durabilityStart) {
             return this.attack;
         } else {
-            return 2;
+            return this.attack / 2;
         }     
     }
     
