@@ -5,26 +5,24 @@ class Weapon {
         this.attack = attack;
         this.durability = durability;
         this.range = range;
+        this.durabilityStart = this.durability;
     }
 
     takeDamage(damage) {
         return this.durability = (this.durability - damage < 0) ? 0 : this.durability - damage ;
     }
 
-    /*
+    
     getDamage() {
-        let attack;
-        if (this.durability = 0) {
-            attack = 0;
+        if (this.durability === 0) {
+            return 0;
         }
-
-        if (this.takeDamage() >= 0.3 * (this.durability)) {
-            attack = this.attack;
+        if (this.durability >= 0.3 * this.durabilityStart) {
+            return this.attack;
         } else {
-            attack = 2;
-        }
-        return attack;
-    }*/
+            return 2;
+        }     
+    }
     
     isBroken() {
         return (this.durability > 0) ? false : true;
@@ -46,16 +44,16 @@ console.log('Проверка прочности')
 hand.takeDamage(1);
 console.log(hand.durability);
 
-bow.takeDamage(10);
+bow.takeDamage(150);
 console.log(bow.durability);
 
 sword.takeDamage(600);
 console.log(sword.durability);
 
-/*console.log('Проверка аттаки');
+console.log('Проверка аттаки');
 console.log(hand.getDamage());
 console.log(bow.getDamage());
-console.log(sword.getDamage());*/
+console.log(sword.getDamage());
 
 console.log('Проверка isBroken');
 console.log(hand.isBroken());
